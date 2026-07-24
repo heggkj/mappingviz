@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore funding patterns while preserving unknown leadership records in the Mapping catalog.">
+  <title>Funding and Leadership Transparency - Mapping Viz</title>
+  <link rel="stylesheet" href="../../assets/site.css?v=2">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../../">Mapping Viz</a>
+      <span class="header-note">Visualization 07</span>
+    </div>
+  </header>
+
+  <main class="shell page-main">
+    <a class="breadcrumb" href="../../"><span aria-hidden="true">&larr;</span> All visualizations</a>
+
+    <section class="page-intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Resources - data transparency</p>
+        <h1 id="page-title">Funding and leadership transparency</h1>
+      </div>
+      <p>
+        Funding patterns are shown alongside leadership-data completeness so
+        missing records remain visible rather than disappearing from analysis.
+      </p>
+    </section>
+
+    <section class="app-panel" aria-label="Funding and leadership transparency dashboard">
+      <div class="transparency-layout">
+        <div class="transparency-callout">
+          <p>Leadership data unavailable</p>
+          <strong>604</strong>
+          <p>of 740 projects - 81.6% of the catalog</p>
+          <div class="completeness-bar" aria-label="136 known and 604 unknown leadership records">
+            <span class="completeness-known" id="known-completeness"></span>
+          </div>
+          <p>136 records include at least one leadership classification.</p>
+        </div>
+
+        <div>
+          <div class="viz-heading">
+            <h2>Leadership classifications</h2>
+            <p class="chart-context">Known tags are non-exclusive; unavailable records remain the largest category.</p>
+          </div>
+          <div class="leadership-bars" id="leadership-bars"></div>
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
+      <div class="viz-toolbar">
+        <div class="viz-heading">
+          <h2>Funding resources by leadership-data availability</h2>
+          <p class="chart-context">Each bar separates projects with known and unknown leadership data.</p>
+        </div>
+        <label class="field" for="funding-sort">
+          Sort funding
+          <select id="funding-sort">
+            <option value="total">Most projects</option>
+            <option value="unknown">Highest unknown share</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="funding-bars" id="funding-bars"></div>
+      <div class="viz-legend">
+        <span class="legend-item"><span class="legend-dot" style="--legend-color: var(--series-1)"></span>Leadership known</span>
+        <span class="legend-item"><span class="legend-dot" style="--legend-color: var(--series-5)"></span>Leadership unknown</span>
+      </div>
+
+      <div class="viz-summary" id="funding-detail" aria-live="polite"></div>
+      <p class="data-note">
+        Funding and leadership classifications are non-exclusive. Unknown
+        leadership is treated as a substantive data-quality category, not as a
+        zero or an omitted value.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <a href="https://sites.lib.jmu.edu/mappingbdh/">Mapping Black Digital and Public Humanities</a>
+    </div>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

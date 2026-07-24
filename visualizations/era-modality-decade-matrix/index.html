@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare historical eras, project start decades, and modality across the Mapping catalog.">
+  <title>Historical Era, Modality, and Start Decade - Mapping Viz</title>
+  <link rel="stylesheet" href="../../assets/site.css?v=2">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../../">Mapping Viz</a>
+      <span class="header-note">Visualization 06</span>
+    </div>
+  </header>
+
+  <main class="shell page-main">
+    <a class="breadcrumb" href="../../"><span aria-hidden="true">&larr;</span> All visualizations</a>
+
+    <section class="page-intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Historical coverage - project form</p>
+        <h1 id="page-title">Eras studied across project generations</h1>
+      </div>
+      <p>
+        Each cell combines historical era, project start decade, and modality
+        to show how the catalog's temporal interests have evolved.
+      </p>
+    </section>
+
+    <section class="app-panel" aria-label="Historical era by project start decade matrix">
+      <div class="viz-heading">
+        <h2>Projects by era studied and start decade</h2>
+        <p class="chart-context">Cell bars divide projects into digital, mixed, and physical modalities.</p>
+      </div>
+
+      <div class="matrix-shell">
+        <table class="era-table" id="era-matrix" aria-label="Historical era by start decade and modality"></table>
+      </div>
+
+      <div class="viz-legend" aria-label="Modality legend">
+        <span class="legend-item"><span class="legend-dot" style="--legend-color: var(--series-1)"></span>Digital</span>
+        <span class="legend-item"><span class="legend-dot" style="--legend-color: var(--series-2)"></span>Mixed</span>
+        <span class="legend-item"><span class="legend-dot" style="--legend-color: var(--series-3)"></span>Physical</span>
+        <span>Darker cells contain more projects</span>
+      </div>
+
+      <div class="viz-summary" id="era-detail" aria-live="polite"></div>
+      <p class="data-note">
+        Projects can cover several historical eras and therefore appear in more
+        than one row. The unknown start-decade column retains 133 projects whose
+        start year could not be normalized.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <a href="https://sites.lib.jmu.edu/mappingbdh/">Mapping Black Digital and Public Humanities</a>
+    </div>
+  </footer>
+
+  <script type="module" src="app.js?v=2"></script>
+</body>
+</html>
