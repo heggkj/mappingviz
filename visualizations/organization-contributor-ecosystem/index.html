@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore relationships between Mapping organization types and contributor roles.">
+  <title>Organization and Contributor Ecosystem - Mapping Viz</title>
+  <link rel="stylesheet" href="../../assets/site.css?v=2">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../../">Mapping Viz</a>
+      <span class="header-note">Visualization 05</span>
+    </div>
+  </header>
+
+  <main class="shell page-main">
+    <a class="breadcrumb" href="../../"><span aria-hidden="true">&larr;</span> All visualizations</a>
+
+    <section class="page-intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Institutions - participation</p>
+        <h1 id="page-title">An ecosystem of organizations and contributors</h1>
+      </div>
+      <p>
+        Follow the strongest recurring relationships between the organizations
+        that host projects and the people who make them.
+      </p>
+    </section>
+
+    <section class="app-panel" aria-label="Organization and contributor ecosystem">
+      <div class="viz-toolbar">
+        <div class="viz-heading">
+          <h2>Shared project relationships</h2>
+          <p class="chart-context">Line width shows the number of projects connecting each pair.</p>
+        </div>
+        <div class="viz-controls">
+          <label class="field" for="organization-focus">
+            Focus organization
+            <select id="organization-focus">
+              <option value="all">All organizations</option>
+            </select>
+          </label>
+          <label class="field" for="minimum-count">
+            Minimum shared projects
+            <select id="minimum-count">
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="20">20</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="chart-wrap">
+        <svg class="ecosystem-chart" id="ecosystem-chart" role="img" aria-labelledby="ecosystem-title ecosystem-description">
+          <title id="ecosystem-title">Organization types connected to contributor roles</title>
+          <desc id="ecosystem-description">A bipartite network connects organization types on the left with contributor roles on the right.</desc>
+        </svg>
+      </div>
+
+      <div class="viz-summary" id="ecosystem-detail" aria-live="polite"></div>
+      <p class="data-note">
+        Organization and contributor tags are non-exclusive. A project with
+        multiple tags contributes to every applicable relationship.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <a href="https://sites.lib.jmu.edu/mappingbdh/">Mapping Black Digital and Public Humanities</a>
+    </div>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
