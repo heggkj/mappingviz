@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore which Mapping topics appear together in the same projects.">
+  <title>Topic Connections - Mapping Viz</title>
+  <link rel="stylesheet" href="../../assets/site.css?v=2">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../../">Mapping Viz</a>
+      <span class="header-note">Visualization 04</span>
+    </div>
+  </header>
+
+  <main class="shell page-main">
+    <a class="breadcrumb" href="../../"><span aria-hidden="true">&larr;</span> All visualizations</a>
+
+    <section class="page-intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Subjects - connections</p>
+        <h1 id="page-title">Which topics travel together?</h1>
+      </div>
+      <p>
+        A co-occurrence matrix shows how often two topics describe the same
+        project, making strong pairings and quieter gaps directly comparable.
+      </p>
+    </section>
+
+    <section class="app-panel" aria-label="Topic co-occurrence matrix">
+      <div class="viz-toolbar">
+        <div class="viz-heading">
+          <h2>Shared projects between topics</h2>
+          <p class="chart-context">The orange diagonal is each topic's total project count.</p>
+        </div>
+        <label class="field" for="matrix-scope">
+          Topics shown
+          <select id="matrix-scope">
+            <option value="18">Top 18 topics</option>
+            <option value="34">All 34 topics</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="matrix-shell">
+        <div class="matrix-grid" id="topic-matrix" role="group" aria-label="Topic co-occurrence counts"></div>
+      </div>
+
+      <div class="viz-legend">
+        <span class="legend-item"><span class="legend-dot" style="--legend-color: var(--series-2)"></span>Topic total</span>
+        <span class="legend-item"><span class="legend-dot" style="--legend-color: var(--series-1)"></span>Shared projects</span>
+        <span>Darker cells contain more projects</span>
+      </div>
+
+      <div class="viz-summary" id="topic-detail" aria-live="polite"></div>
+      <p class="data-note">
+        Topic tags are non-exclusive. A project with three topics contributes
+        once to each of its three topic pairs.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <a href="https://sites.lib.jmu.edu/mappingbdh/">Mapping Black Digital and Public Humanities</a>
+    </div>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
