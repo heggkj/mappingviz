@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore where Mapping projects share exact geographic coordinates.">
+  <title>Where Projects Gather - Mapping Viz</title>
+  <link rel="stylesheet" href="../../assets/site.css?v=2">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../../">Mapping Viz</a>
+      <span class="header-note">Visualization 02</span>
+    </div>
+  </header>
+
+  <main class="shell page-main">
+    <a class="breadcrumb" href="../../"><span aria-hidden="true">&larr;</span> All visualizations</a>
+
+    <section class="page-intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Geography - shared locations</p>
+        <h1 id="page-title">Where projects gather</h1>
+      </div>
+      <p>
+        Exact coordinate stacks reveal institutional and urban centers without
+        hiding the projects that occupy the same point.
+      </p>
+    </section>
+
+    <section class="app-panel" aria-label="Clustered project map">
+      <div class="viz-toolbar">
+        <p class="stat-line">
+          <span><strong>257</strong> projects share coordinates</span>
+          <span><strong>12</strong> projects in the largest stack</span>
+        </p>
+        <div class="viz-controls">
+          <div class="mode-group" aria-label="Map locations">
+            <button class="mode-button" id="all-locations" type="button" aria-pressed="true">All locations</button>
+            <button class="mode-button" id="shared-locations" type="button" aria-pressed="false">Shared only</button>
+          </div>
+          <label class="field" for="location-select">
+            Inspect location
+            <select id="location-select"></select>
+          </label>
+        </div>
+      </div>
+
+      <div class="chart-wrap">
+        <svg class="map-chart" id="map-chart" role="img" aria-labelledby="map-title map-description">
+          <title id="map-title">World map of project coordinate stacks</title>
+          <desc id="map-description">Circles mark 578 exact coordinate groups. Larger orange circles contain multiple projects.</desc>
+        </svg>
+      </div>
+
+      <div class="viz-legend" aria-label="Map legend">
+        <span class="legend-item"><span class="legend-dot" style="--legend-color: var(--series-1)"></span>One project</span>
+        <span class="legend-item"><span class="legend-dot" style="--legend-color: var(--series-2)"></span>Shared coordinates</span>
+        <span>Circle area increases with stack size</span>
+      </div>
+
+      <div class="viz-summary" id="map-detail" aria-live="polite"></div>
+      <p class="data-note">
+        Coordinates describe cataloged project locations, not necessarily the
+        geographic subjects studied by each project. Exact matches are grouped.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <a href="https://sites.lib.jmu.edu/mappingbdh/">Mapping Black Digital and Public Humanities</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+  <script type="module" src="app.js?v=2"></script>
+</body>
+</html>
