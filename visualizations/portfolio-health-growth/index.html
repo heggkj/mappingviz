@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore project starts, cumulative catalog growth, and maintenance recency.">
+  <title>Portfolio Health and Growth · Mapping Viz</title>
+  <link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../../">Mapping Viz</a>
+      <span class="header-note">Visualization 01</span>
+    </div>
+  </header>
+
+  <main class="shell page-main">
+    <a class="breadcrumb" href="../../"><span aria-hidden="true">←</span> All visualizations</a>
+
+    <section class="page-intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Timeline · stewardship</p>
+        <h1 id="page-title">Portfolio health and growth</h1>
+      </div>
+      <p>
+        When projects began, how the known catalog accumulated, and how recently
+        projects were recorded as updated.
+      </p>
+    </section>
+
+    <section class="app-panel" aria-label="Interactive portfolio timeline">
+      <div class="chart-toolbar">
+        <div class="chart-heading">
+          <div>
+            <h2 id="metric-label">Projects started by year</h2>
+            <p class="chart-context">607 of 740 projects have a usable start year · 133 unknown</p>
+          </div>
+        </div>
+
+        <div class="controls" aria-label="Timeline controls">
+          <div class="mode-group" aria-label="Measure">
+            <button class="mode-button" id="annual-button" type="button" aria-pressed="true">Annual starts</button>
+            <button class="mode-button" id="cumulative-button" type="button" aria-pressed="false">Cumulative</button>
+          </div>
+          <label class="field" for="year-select">
+            Inspect year
+            <select id="year-select"></select>
+          </label>
+        </div>
+      </div>
+
+      <div class="chart-wrap">
+        <svg class="timeline-chart" id="timeline-chart" role="img" aria-labelledby="chart-title chart-description">
+          <title id="chart-title">Projects started by year</title>
+          <desc id="chart-description">Annual project starts from 1946 through 2025, peaking at 54 projects in 2020.</desc>
+        </svg>
+        <div class="tooltip" id="chart-tooltip" role="status"></div>
+      </div>
+
+      <p class="chart-detail" id="chart-detail" aria-live="polite"></p>
+
+      <div class="recency-heading">
+        <div>
+          <h2>Maintenance recency</h2>
+          <p class="chart-context">Last recorded update for all 740 projects</p>
+        </div>
+      </div>
+      <svg class="recency-chart" id="recency-chart" role="img" aria-label="Stacked bar showing project maintenance recency"></svg>
+      <div class="recency-legend" id="recency-legend" aria-label="Maintenance recency legend"></div>
+
+      <p class="data-note">
+        Unknown and unparseable dates are shown explicitly. Project start and
+        last-updated values describe the catalog record; they do not measure
+        whether a project website is currently online.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">Mapping Black Digital and Public Humanities</div>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
