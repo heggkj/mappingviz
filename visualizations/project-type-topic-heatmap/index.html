@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare Mapping project types with the topics they cover.">
+  <title>Project Types and Topics - Mapping Viz</title>
+  <link rel="stylesheet" href="../../assets/site.css?v=2">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../../">Mapping Viz</a>
+      <span class="header-note">Visualization 03</span>
+    </div>
+  </header>
+
+  <main class="shell page-main">
+    <a class="breadcrumb" href="../../"><span aria-hidden="true">&larr;</span> All visualizations</a>
+
+    <section class="page-intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Formats - subjects</p>
+        <h1 id="page-title">Project types and their topics</h1>
+      </div>
+      <p>
+        See which forms of digital and public humanities work carry particular
+        subjects, and where combinations remain comparatively uncommon.
+      </p>
+    </section>
+
+    <section class="app-panel" aria-label="Project type by topic heatmap">
+      <div class="viz-toolbar">
+        <div class="viz-heading">
+          <h2>Projects at each intersection</h2>
+          <p class="chart-context">Rows are non-exclusive project types; columns are non-exclusive topics.</p>
+        </div>
+        <label class="field" for="topic-scope">
+          Topics shown
+          <select id="topic-scope">
+            <option value="18">Top 18 topics</option>
+            <option value="34">All 34 topics</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="matrix-shell">
+        <div class="matrix-grid" id="type-topic-grid" role="group" aria-label="Project type by topic counts"></div>
+      </div>
+
+      <div class="viz-legend">
+        <span>Light</span>
+        <span class="legend-swatch" style="background: color-mix(in srgb, var(--series-1) 18%, var(--surface-strong))"></span>
+        <span>Fewer projects</span>
+        <span class="legend-swatch" style="background: color-mix(in srgb, var(--series-1) 82%, var(--surface-strong))"></span>
+        <span>More projects</span>
+      </div>
+
+      <div class="viz-summary" id="heatmap-detail" aria-live="polite"></div>
+      <p class="data-note">
+        Projects can have several types and topics, so intersections and row or
+        column totals are not mutually exclusive.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <a href="https://sites.lib.jmu.edu/mappingbdh/">Mapping Black Digital and Public Humanities</a>
+    </div>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
