@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Documentation for the Mapping Black Digital and Public Humanities visualization data downloads.">
+  <title>Data documentation | Mapping Viz</title>
+  <link rel="stylesheet" href="../assets/site.css?v=5">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html">Mapping Viz</a>
+      <div class="header-context">
+        <span class="header-note">Data documentation</span>
+        <a class="header-return" href="https://sites.lib.jmu.edu/mappingbdph/">
+          Back to Main Website <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell data-main">
+    <a class="breadcrumb" href="../index.html">&larr; Back to visualizations</a>
+
+    <section class="data-intro" aria-labelledby="data-title">
+      <p class="eyebrow">Open data</p>
+      <h1 id="data-title">Data behind the visualizations</h1>
+      <p>
+        These downloads document the 740 projects represented in the Mapping
+        Black Digital and Public Humanities visualization gallery.
+      </p>
+    </section>
+
+    <section class="data-doc-grid" aria-label="Available data downloads">
+      <article class="data-info-card">
+        <p class="eyebrow">Project-level data</p>
+        <h2>Project dataset (CSV)</h2>
+        <p>
+          One row per project, designed for Excel, Google Sheets, R, Python,
+          Tableau, and other research workflows.
+        </p>
+        <a class="button-link" href="mapping-bdph-projects.csv" download>
+          Download CSV <span aria-hidden="true">&rarr;</span>
+        </a>
+      </article>
+
+      <article class="data-info-card">
+        <p class="eyebrow">Machine-readable data</p>
+        <h2>Visualization aggregates (JSON)</h2>
+        <p>
+          The exact summarized values used by the gallery’s charts, map, and
+          matrices, including the geographic topology used by the map.
+        </p>
+        <a class="button-link" href="mapping-visualization-aggregates.json" download>
+          Download JSON <span aria-hidden="true">&rarr;</span>
+        </a>
+      </article>
+    </section>
+
+    <section class="data-fields" aria-labelledby="field-guide-title">
+      <p class="eyebrow">Field guide</p>
+      <h2 id="field-guide-title">How to read the project dataset</h2>
+      <dl class="data-definition-list">
+        <div>
+          <dt>One row per project</dt>
+          <dd>Each record is identified by a stable <code>Project ID</code> beginning with <code>bdph_</code>.</dd>
+        </div>
+        <div>
+          <dt>Multi-value fields</dt>
+          <dd>Project types, topics, eras, organization types, contributor roles, leadership classifications, and funding resources are separated with semicolons.</dd>
+        </div>
+        <div>
+          <dt>Dates and recency</dt>
+          <dd>Raw project-start and update values are retained alongside cleaned years, decades, recency buckets, and status fields.</dd>
+        </div>
+        <div>
+          <dt>Geographic fields</dt>
+          <dd>Location text, country, city, state or region, latitude, longitude, and coordinate-sharing indicators support the geographic visualization.</dd>
+        </div>
+        <div>
+          <dt>Unknown values</dt>
+          <dd>Unknown or unparsed values remain explicit rather than being inferred or filled in.</dd>
+        </div>
+        <div>
+          <dt>Privacy</dt>
+          <dd>The public project CSV excludes contact-email fields. It contains the public catalog and derived classification fields used in the visualizations.</dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <a href="https://sites.lib.jmu.edu/mappingbdh/">Mapping Black Digital and Public Humanities</a>
+    </div>
+  </footer>
+</body>
+</html>
