@@ -78,7 +78,14 @@ def read_rows(worksheet):
 def clean(value):
     if value is None:
         return ""
-    return str(value).strip()
+    return " ".join(str(value).split())
+
+
+def clean_year(value):
+    """Convert cached formula zeros for missing years into empty CSV cells."""
+    if value in {None, 0, "0"}:
+        return ""
+    return clean(value)
 
 
 def tags_by_project(workbook):
@@ -104,10 +111,14 @@ def export_projects(workbook):
         writer.writeheader()
         for project in projects:
             project_id = clean(project.get("BDPH ID"))
-            row = {
-                output_name: clean(project.get(source_name))
-                for source_name, output_name in PROJECT_FIELDS
-            }
+            row = {}
+            for source_name, output_name in PROJECT_FIELDS:
+                value = project.get(source_name)
+                row[output_name] = (
+                    clean_year(value)
+                    if output_name in {"Start Year", "Last Updated Year"}
+                    else clean(value)
+                )
             row.update(
                 {
                     output_name: "; ".join(sorted(values.get(project_id, set())))
